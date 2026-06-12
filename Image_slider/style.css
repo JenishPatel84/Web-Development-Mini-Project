@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+}
+.container{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.img_container{
+    height: 300px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    overflow: hidden;
+}
+.slider{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+button{
+    height: 70px;
+    width: 70px;
+    font-size: 60px;
+    background-color: transparent;
+    box-shadow: 8px 8px;
+    cursor: pointer;
+    background-color: chocolate;
+    transition: background-color 0.5s;
+
+}
+button:hover{
+    background-color: rgb(128, 54, 2);
+}

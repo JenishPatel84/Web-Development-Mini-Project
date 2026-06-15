@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            background-color: darkgrey;
+            text-align: center;
+            margin: 10px;
+        }
+        p{
+            font-size: larger;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate a Random color</h1>
+        <p>In this project random background color change on fix time interval also have start and stop functionality.</p>
+    </div>
+    
+    <h1 style="text-align: center;">Jenish Patel</h1>
 
+    <button id="start" style="padding: 10px; ">start</button>
+    <button id="stop" style="padding: 10px; ">stop</button>
+
+    <script>
+        const randomColor = function(){
+            const hex = "0123456789ABCDEF";
+            let color = '#';
+            for(let i=0; i<6; i++){
+                color += hex[Math.floor(Math.random()*16)];
+            }
+            return color;
+        }
+        let intervalId;
+        const startchangingcolor = function(){
+            if(!intervalId){
+                intervalId = setInterval(changeBg, 2000);
+            }
+            function changeBg(){
+                document.body.style.backgroundColor = randomColor();
+            }
+        }
+        const stopchangingcolor = function(){
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+        document.getElementById("start").addEventListener("click",startchangingcolor);
+
+        document.getElementById("stop").addEventListener("click",stopchangingcolor);
+    </script>
+    
+</body>
+</html>
